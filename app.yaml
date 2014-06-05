@@ -1,5 +1,5 @@
 application: relawanapps
-version: 0.0
+version: 0-0-dev
 runtime: go
 api_version: go1
 
