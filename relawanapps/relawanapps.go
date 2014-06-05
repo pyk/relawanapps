@@ -83,6 +83,8 @@ func redirectToRepos(w http.ResponseWriter, r *http.Request) {
 
 // url '/suara' di handle oleh fungsi ini
 func handler(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
+    w.Header().Set("Access-Control-Allow-Origin", "*")
 	// buat konteks baru
 	c := appengine.NewContext(r)
 	// handle request lewat handleSuara()
@@ -118,6 +120,8 @@ func handleSuara(c appengine.Context, r *http.Request) (interface{}, error) {
 
 // menghandle request di '/suara/prabowo'
 func Prabowo(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
+    w.Header().Set("Access-Control-Allow-Origin", "*")
 	c := appengine.NewContext(r)
 	val, err := totalSuara(1, c, r)
 	if err == nil {
@@ -132,6 +136,8 @@ func Prabowo(w http.ResponseWriter, r *http.Request) {
 
 // menghandle request di '/suara/jokowi'
 func Jokowi(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-Type", "application/json")
+    w.Header().Set("Access-Control-Allow-Origin", "*")
 	c := appengine.NewContext(r)
 	val, err := totalSuara(2, c, r)
 	if err == nil {
