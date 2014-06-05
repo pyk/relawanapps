@@ -1,14 +1,14 @@
 package relawanapps
 
 import (
-    "fmt"
+    // "fmt"
     "net/http"
 )
 
 func init() {
-    http.HandleFunc("/", handler)
+    http.HandleFunc("/", redirectToRepos)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello world!")
+func redirectToRepos(w http.ResponseWriter, r *http.Request) {
+    http.Redirect(w,r, "https://github.com/pyk/relawanapps", 307)
 }
