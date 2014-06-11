@@ -15,7 +15,7 @@ import (
 // struktur ini dipakai sebagai entity oleh DataStore
 // dan setiap fieldnya merupakan properti entity
 type Relawan struct {
-	Id          int64     `json:"id"`
+	Id          string    `json:"id"`
 	JumlahSuara int       `json:"jumlah_suara"`
 	Pihak       int       `json:"pihak"`
 	SubmittedAt time.Time `json:"submitted_at"`
